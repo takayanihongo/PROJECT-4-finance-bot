@@ -1,0 +1,36 @@
+Tahap 4 — Belajar menggunakan Tmux
+Ini salah satu komponen terpenting untuk mini server kamu.
+
+Bayangkan Tmux sebagai ruang kerja virtual yang tetap berjalan meskipun kamu keluar dari SSH.
+1. Membuat session
+tmux new -s server
+
+
+Sekarang kamu berada di dalam session bernama server.
+2. Menjalankan program
+Misalnya:
+python --version
+
+
+Nanti ketika sudah ada bot WhatsApp, kita jalankan programnya di sini.
+3. Keluar tanpa mematikan proses
+Tekan kombinasi:
+CTRL + B
+
+
+Lepaskan, kemudian tekan:
+D
+
+
+Kamu akan kembali ke terminal SSH biasa, tetapi session Tmux tetap berjalan.
+4. Melihat session
+tmux ls
+
+
+5. Masuk kembali
+tmux attach -t server
+
+
+6. Menghentikan session
+Kalau memang ingin menghentikan seluruh proses dalam session:
+tmux kill-session -t server
